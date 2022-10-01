@@ -18,12 +18,6 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.formChat = this.formBuilder.group({
       message: ['', [Validators.required]]
     });
-    const newMessage: IMessage = {
-      name: 'Danny',
-      text: 'Hola Mundo, Hola Mundo, Hola Mundo, Hola Mundo, Hola Mundo, Hola Mundo, Hola Mundo, Hola Mundo, Hola Mundo, Hola Mundo, Hola Mundo, Hola Mundo,',
-      date: new Date()
-    };
-    this.messagesRecived.push(newMessage);
   }
 
   ngOnInit(): void {
