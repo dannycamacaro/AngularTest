@@ -1,0 +1,24 @@
+<div class="container-xxl">
+
+  <div class="containerMessages">
+    <ng-container *ngFor="let message of messagesRecived">
+      <div class="card" style="width: 100%;">
+        <ul class="list-group list-group-flush">
+          {{message.date | date : 'hh:mm a'}} -> {{message.name}} Dice: {{message.text}}
+        </ul>
+      </div>
+    </ng-container>
+  </div>
+  <div>
+    <form [formGroup]="formChat">
+      <div class="input-group">
+        <span class="input-group-text">Mensaje : </span>
+        <textarea class="form-control" aria-label="Mensaje" formControlName="message"></textarea>
+      </div>
+    </form>
+  </div>
+
+  <ng-container>
+    <button type="button" class="btn btn-primary" (click)="sendMessage()" [disabled]="formChat.invalid">Enviar Mensaje</button>
+  </ng-container>
+</div>
